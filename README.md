@@ -1,4 +1,4 @@
-# python-crypto
+# Python Crypto
 
 A problem set in Python inspired by CS50's Crypto pset
 
@@ -49,6 +49,7 @@ $ python3 caesar.py
 Be sure to drink your Ovaltine!
 Or fher gb qevax lbhe Binygvar!
 ```
+
 Here, the user typed in "Be sure to drink your Ovaltine!" and the program output "Or fher gb qevax lbhe Binygvar!".
 
 ### Getting the rotation key from the command line
@@ -59,13 +60,17 @@ $ python3 caesar.py 13
 Be sure to drink your Ovaltine!
 Or fher gb qevax lbhe Binygvar!
 ```
+
 and this:
+
 ```
 $ python3 caesar.py 5
 Be sure to drink your Ovaltine!
 GjsxzwjsytsiwnspsdtzwsTafqynsjt
 ```
+
 and this:
+
 ```
 $ python3 caesar.py 5
 Hello World
@@ -76,7 +81,9 @@ In python, a list of the command-line arguments is made accessible to your progr
 
 Thus, you'll need to convert the command-line argument to an integer for using in your encryption algorithm. For this, use the built-in [`int` function](https://docs.python.org/3/library/functions.html#int).
 
-#### Tips and Hints
+#### Specification
+
+* If the user fails to enter a command-line parameter, you should print a helpful message and quit.
 
 * You need not worry about validating the command-line argument. Calling `int` with something that can't neatly be converted to a number will raise an error, and your program will die.
 
@@ -99,3 +106,29 @@ $ python3 vigenere.py launchcode
 The crow flies at midnight
 Ehy ptvy tomps ug opfblkst
 ```
+
+Here, the user has entered "The crow flies at midnight" and the program output "Ehy ptvy tomps ug opfblkst".
+
+### Specification
+
+* You may assume that the command-line input consists only of alphanumeric characters.
+* If the user fails to enter a command-line parameter, you should print a helpful message and quit.
+* You should only apply the cipher to a character that is a letter. For example, in the above example, here's the way it should work:
+
+char from input string | cipher char
+-----------------------|------------
+T | l
+h | a
+e | u
+ | (none)
+ c | n
+ r | c
+ o | h
+ w | c
+ (and so on...) |
+
+* Your program should preserve the case of each letter in the message string.
+
+### Tips and hints
+
+* Thank about what happens when you call your function from `caesar.py`, `rot(p, mess)`, with a message that only has one character. How might that be useful to you here?
